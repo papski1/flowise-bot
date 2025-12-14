@@ -291,70 +291,6 @@
     html {
       scroll-behavior: smooth;
     }
-
-    /* Chatbot Customization */
-    :root {
-      --flowise-primary-color: var(--warm-brown);
-      --flowise-background-color: var(--light-cream);
-      --flowise-text-color: var(--charcoal);
-      --flowise-button-color: var(--warm-brown);
-      --flowise-button-hover: var(--dark-brown);
-      --flowise-bubble-color: var(--cream);
-      --flowise-user-bubble: var(--soft-red);
-    }
-
-    /* Override Flowise chatbot colors */
-    flowise-chatbot,
-    flowise-chatbot * {
-      --primary-color: var(--warm-brown) !important;
-      --background-color: var(--light-cream) !important;
-      --text-color: var(--charcoal) !important;
-    }
-
-    /* Chatbot button styling */
-    [id*="flowise-chatbot"] button,
-    [class*="flowise-chatbot"] button,
-    button[class*="chatbot"] {
-      background-color: var(--warm-brown) !important;
-      color: var(--cream) !important;
-    }
-
-    [id*="flowise-chatbot"] button:hover,
-    [class*="flowise-chatbot"] button:hover,
-    button[class*="chatbot"]:hover {
-      background-color: var(--dark-brown) !important;
-    }
-
-    /* Chatbot message bubbles */
-    [id*="flowise-chatbot"] [class*="message"],
-    [class*="flowise-chatbot"] [class*="message"] {
-      background-color: var(--cream) !important;
-      color: var(--charcoal) !important;
-    }
-
-    /* Chatbot user messages */
-    [id*="flowise-chatbot"] [class*="user"],
-    [class*="flowise-chatbot"] [class*="user"] {
-      background-color: var(--soft-red) !important;
-      color: white !important;
-    }
-
-    /* Chatbot input */
-    [id*="flowise-chatbot"] input,
-    [id*="flowise-chatbot"] textarea,
-    [class*="flowise-chatbot"] input,
-    [class*="flowise-chatbot"] textarea {
-      background-color: white !important;
-      color: var(--charcoal) !important;
-      border-color: var(--warm-brown) !important;
-    }
-
-    /* Chatbot header */
-    [id*="flowise-chatbot"] [class*="header"],
-    [class*="flowise-chatbot"] [class*="header"] {
-      background-color: var(--warm-brown) !important;
-      color: var(--cream) !important;
-    }
   </style>
 </head>
 <body>
@@ -549,120 +485,12 @@
 
   <!-- Flowise Chatbot -->
   <script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    import Chatbot from "https://cdn.jsdelivr.net/gh/papski1/FlowiseChatEmbed@latest/dist/web.js"
 
     Chatbot.init({
       chatflowid: "f45a919c-0ec8-467c-ade7-36ef579a04bc",
       apiHost: "http://localhost:3000",
-      theme: {
-        primaryColor: "#8B4513",
-        backgroundColor: "#FFFEF8",
-        textColor: "#2C2C2C",
-        buttonColor: "#8B4513",
-        buttonTextColor: "#F5F5DC",
-        botMessageBackgroundColor: "#F5F5DC",
-        botMessageTextColor: "#2C2C2C",
-        userMessageBackgroundColor: "#C94A4A",
-        userMessageTextColor: "#FFFFFF",
-      }
     })
   </script>
-  
-  <style>
-    /* Additional chatbot styling to match theme */
-    flowise-chatbot {
-      --flowise-primary-color: #8B4513;
-      --flowise-background-color: #FFFEF8;
-      --flowise-text-color: #2C2C2C;
-    }
-    
-    /* Target the chatbot button */
-    button[class*="flowise-chatbot-button"],
-    div[class*="flowise-chatbot-button"] button,
-    [id*="flowise"] button {
-      background-color: #8B4513 !important;
-      color: #F5F5DC !important;
-      border-radius: 50% !important;
-      box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3) !important;
-      transition: all 0.3s ease !important;
-    }
-    
-    button[class*="flowise-chatbot-button"]:hover,
-    div[class*="flowise-chatbot-button"] button:hover,
-    [id*="flowise"] button:hover {
-      background-color: #654321 !important;
-      transform: scale(1.05) !important;
-      box-shadow: 0 6px 16px rgba(139, 69, 19, 0.4) !important;
-    }
-    
-    /* Chatbot window styling */
-    [id*="flowise-chatbot-window"],
-    [class*="flowise-chatbot-window"],
-    [class*="chatbot-window"] {
-      border-radius: 15px !important;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
-      border: 1px solid rgba(139, 69, 19, 0.2) !important;
-    }
-    
-    /* Chatbot header */
-    [id*="flowise-chatbot"] header,
-    [class*="flowise-chatbot"] header,
-    [class*="chatbot-header"] {
-      background: linear-gradient(135deg, #8B4513 0%, #654321 100%) !important;
-      color: #F5F5DC !important;
-      border-radius: 15px 15px 0 0 !important;
-    }
-    
-    /* Message bubbles */
-    [class*="message-bubble"],
-    [class*="bot-message"],
-    [class*="assistant-message"] {
-      background-color: #F5F5DC !important;
-      color: #2C2C2C !important;
-      border-radius: 12px !important;
-    }
-    
-    [class*="user-message"],
-    [class*="human-message"] {
-      background-color: #C94A4A !important;
-      color: #FFFFFF !important;
-      border-radius: 12px !important;
-    }
-    
-    /* Input field */
-    [id*="flowise-chatbot"] input[type="text"],
-    [id*="flowise-chatbot"] textarea,
-    [class*="flowise-chatbot"] input[type="text"],
-    [class*="flowise-chatbot"] textarea {
-      background-color: white !important;
-      color: #2C2C2C !important;
-      border: 2px solid #8B4513 !important;
-      border-radius: 25px !important;
-    }
-    
-    [id*="flowise-chatbot"] input[type="text"]:focus,
-    [id*="flowise-chatbot"] textarea:focus,
-    [class*="flowise-chatbot"] input[type="text"]:focus,
-    [class*="flowise-chatbot"] textarea:focus {
-      border-color: #654321 !important;
-      outline: none !important;
-      box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1) !important;
-    }
-    
-    /* Send button */
-    [id*="flowise-chatbot"] button[type="submit"],
-    [class*="flowise-chatbot"] button[type="submit"],
-    [class*="send-button"] {
-      background-color: #8B4513 !important;
-      color: #F5F5DC !important;
-      border-radius: 50% !important;
-    }
-    
-    [id*="flowise-chatbot"] button[type="submit"]:hover,
-    [class*="flowise-chatbot"] button[type="submit"]:hover,
-    [class*="send-button"]:hover {
-      background-color: #654321 !important;
-    }
-  </style>
 </body>
 </html>
